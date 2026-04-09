@@ -66,19 +66,57 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <h2 className="text-3xl font-bold mb-10">Projects</h2>
-        <div className="bg-gray-900 p-6 rounded-2xl 
-        hover:scale-105 hover:shadow-2xl 
-        hover:shadow-purple-500/20 
-        transition duration-300">
-          <h3 className="text-xl font-semibold mb-2">E-Commerce Website</h3>
-          <p className="text-gray-400 mb-4">
-            Full-stack app with authentication, cart, and payments.
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
 
-          <div className="flex gap-4">
-            <a href="#" className="text-blue-400">Live</a>
-            <a href="#" className="text-gray-400">GitHub</a>
-          </div>
+          {[
+            {
+              title: "E-Commerce",
+              desc: "Full-stack app with auth, cart & payments.",
+              link: "https://github.com/",
+              color: "bg-purple-900"
+            },
+            {
+              title: "Portfolio",
+              desc: "Personal portfolio with animations.",
+              link: "https://github.com/",
+              color: "bg-blue-900"
+            },
+            {
+              title: "Chat App",
+              desc: "Realtime chat using sockets.",
+              link: "https://github.com/",
+              color: "bg-pink-900"
+            },
+            {
+              title: "Dashboard",
+              desc: "Admin dashboard with analytics.",
+              link: "https://github.com/",
+              color: "bg-indigo-900"
+            }
+          ].map((project, i) => (
+
+            <div key={i} className="group perspective">
+
+              <div className="relative w-full h-72 transition-transform duration-1200 transform-style preserve-3d group-hover:rotate-y-180">
+
+                {/* FRONT */}
+                <div className={`absolute w-full h-full ${project.color} rounded-2xl flex items-center justify-center text-white text-xl font-bold backface-hidden group-hover:shadow-xl group-hover:shadow-purple-500/20`}>
+                  {project.title}
+                </div>
+
+                {/* BACK */}
+                <div className="absolute w-full h-full bg-gray-900 rounded-2xl flex flex-col items-center justify-center text-center px-4 rotate-y-180 backface-hidden">
+                  <p className="text-sm mb-4">{project.desc}</p>
+                  <a href={project.link} target="_blank" className="text-purple-400 hover:underline">
+                    GitHub →
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+          ))}
+
         </div>
       </motion.section>
 

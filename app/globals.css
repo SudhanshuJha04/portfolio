@@ -42,3 +42,19 @@ body {
     background-color: rgba(168, 85, 247, 0.2); /* back */
   }
 }
+
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style {
+  transform-style: preserve-3d;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
