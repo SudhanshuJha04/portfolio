@@ -9,10 +9,6 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="absolute inset-0 -z-10 animate-gradient 
-      bg-gradient-to-r 
-      from-purple-800 via-blue-700 via-pink-600 via-red-500 to-orange-400 
-      bg-[length:400%_400%] blur-2xl opacity-70"></div>
       <section className="relative h-screen flex flex-col justify-center items-center text-center px-4">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
@@ -20,9 +16,15 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-7xl font-bold mb-4"
         >
-          Hi, I'm Sudhanshu 👋
+          Hi, I'm Sudhanshu
         </motion.h1>
-        <div className="absolute w-[500px] h-[500px] bg-purple-500/20 blur-3xl rounded-full"></div>
+        <div 
+          className="absolute top-1/2 left-1/2 
+          w-[700px] h-[400px] 
+          -translate-x-1/2 -translate-y-1/2 
+          rounded-full blur-3xl opacity-70"
+          style={{ animation: "glowAnimation 12s ease-in-out infinite" }}
+        ></div>
         <TypeAnimation
           sequence={[
             "Software Developer",
